@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 90%;
+        height: 500px;
+        background: white;
+        border:4px solid #000
+
+        }
+        #wrap div{
+            width: 20%;
+        }
+        #wrap div:first-child{
+            background: blue;
+        }
+        #wrap div:nth-child(2){
+            background: yellow;
+        }
+        #wrap div:nth-child(3){
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+    
+</body>
+</html>

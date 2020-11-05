@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p v-if="titleCheck == true">{{sTitle}}</p>
+        <p v-else>{{sTitle2}}</p>
+        <button v-on:click="fnChangeTitle">클릭</button>
+       
+    </div>
+    <script>
+        //Vue 객체를 생성해 앱을 초기화하고 시작
+        new Vue({
+            el:'#main',
+            data:{
+                sTitle:'안녕하세요',
+                sTitle2:'아닌데',
+                titleCheck:false
+            },
+            methods:{
+                fnChangeTitle(){
+                    this.titleCheck = !this.titleCheck
+                }
+            }
+        })
+    </script>
+</body>
+</html>

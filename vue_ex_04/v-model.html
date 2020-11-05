@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>{{sMsg}}</p>
+        <p>{{sBsg}}</p>
+        <!-- v-model은 데이터를 가져오는 동시에 입력이 동기화됨 -->
+        <input type="text" v-model:value="sMsg">
+        <input type="text" :value="sBsg">
+    </div>
+    <script>
+        //Vue 객체를 생성해 앱을 초기화하고 시작
+        new Vue({
+            el:'#main',
+            data:{
+                sMsg:'안녕하세요!',
+                sBsg:'v-bind'
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fetch('./data.json')
+                        .then(res=>res.text())
+                        .then(res=>console.log(res))"> 텍스트
+
+    </button>
+    <button onclick="fetch('./data.json')
+    .then(res=>res.json())
+    .then(res=>console.log(res))"> json
+
+</button>
+
+
+    
+</body>
+</html>

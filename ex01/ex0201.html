@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="clickme"onclick="console.log(fnSayHello())">눌러 주세요</button>
+    <button onclick="alert(fnPlus(3,5))">3+5</button>
+    <button onclick="console.log(fnMinus(3,5))">3-5</button>
+    
+</body>
+<script>
+    function fnSayHello(){
+        document.querySelector('#clickme').innerHTML = '안녕하세요';
+    }
+
+    function fnPlus(num1,num2){
+        return num1+num2;
+    }
+
+    
+    const fnMinus =  function  (num1,num2){
+        return num1-num2;
+    }
+</script>
+</html>

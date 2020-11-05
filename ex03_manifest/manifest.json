@@ -1,0 +1,18 @@
+{
+    "name":"안녕하세요 ~! PMA by JS",
+    "short_name":"PMA by JS",
+    "description":"PMA start program",
+    "scope":".",
+    "start_url":"./",
+    "display":"fullscreen",
+    "orientation":"portrail",
+    "thema_color":"#ffffff",
+    "background_color":"#ffffff",
+    "icons":[
+        {
+            "src":"images/icons/android-chrome-512x512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ]
+}

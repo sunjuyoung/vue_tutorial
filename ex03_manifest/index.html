@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- PMW manifest 파일연결, 상태 표시줄 색상을 흰색으로 변경 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- user-scale=1.0  모바일 기기에서 축소기능 제한-->
+    <link rel="shortcut" href="images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <title>안녕하세요</title>
+    <style>
+        /* 모두 높이를 100%로 고정시켜야  플렉스 박스 동작*/
+        html,body{
+            height: 100%;
+            background-color: #F3A530;
+            color: #ffffff;
+        }
+        .container{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>안녕하세요</h1>
+        <img src="./images/hello-pwa.png" alt="" />
+        <p>by JS</p>
+    </div>
+    <script>
+        /*
+            register() 메서드를 사용해 서비스 워커를 index.html 파일에 등록
+            navigator.serviceWorker 는 serviceworkercontainer라는 읽기 전용의 
+        */
+        if('serviceWorker' in navigator){
+            navigator.serviceWorker
+            .register('./service_worker.js')
+            .then(function (){
+                console.log('서비스 워커가 등록됨!');
+            })
+        }
+
+    </script>
+    
+</body>
+</html>
