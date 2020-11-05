@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>클릭  숫자 : {{nClicks}}</p>
+        <p>카운트 다운: {{fnCounter}}</p>
+        <button v-on:click="fnIncrement">눌러주세요</button>
+    </div>
+    <script>
+        new Vue({
+            el:'#main',
+            data:{
+                nClicks:0
+
+            },
+            /*computed 머스태시에 작성할 로직이 복잡하면 함수로 정의할때,
+             계산량이 많아 캐시가 필요할때*/
+            computed:{
+                fnCounter(){
+                    return 10-this.nClicks;
+                }
+               
+            },
+            /*뷰의 이벤트 핸들러 로직을 함수로 정의할떄*/
+            methods:{
+                fnIncrement(){
+                    this.nClicks++;
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

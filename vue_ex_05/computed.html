@@ -8,26 +8,26 @@
 </head>
 <body>
     <div id="main">
-        <p v-if="titleCheck == true">{{sTitle}}</p>
-        <p v-else>{{sTitle2}}</p>
-        <button v-on:click="fnChangeTitle">클릭</button>
+       <p>원본 문장: "{{sOriginalMessage}}"</p>
+       <p>대분자로 변환된 문장: "{{fnUpperCaseMsg}}"</p>
        
     </div>
     <script>
-        //Vue 객체를 생성해 앱을 초기화하고 시작
         new Vue({
             el:'#main',
             data:{
-                sTitle:'안녕하세요',
-                sTitle2:'아닌데',
-                titleCheck:false
+                sOriginalMessage:'How are you?'
+
             },
-            methods:{
-                fnChangeTitle(){
-                    this.titleCheck = !this.titleCheck
+            //머시테시 안에 넣을 자바스크립트 로직이 복잡할때 사용
+            computed:{
+                fnUpperCaseMsg : function(){
+                    return this.sOriginalMessage.toUpperCase()
                 }
+
             }
         })
+
     </script>
 </body>
 </html>
