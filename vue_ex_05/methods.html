@@ -4,16 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  
 </head>
 <body>
     <div id="main">
         <p>클릭  숫자 : {{nClicks}}</p>
         <p>카운트 다운: {{fnCounter}}</p>
         <button v-on:click="fnIncrement">눌러주세요</button>
+        <hr>
+        <simple-counter startnumber="1"></simple-counter>
+        <simple-counter startnumber="10"></simple-counter>
+        <simple-counter startnumber="100"></simple-counter>
     </div>
+
     <script>
-        new Vue({
+        Vue.component('simple-counter', {
+            // 1. 엘리먼트 속성값으로 받을 startnumber 선언
+            props: ['startnumber'],
+            // 2. 화면에 표시할 템플릿 정의
+            template: `
+            <button v-on:click="fnIncCounter">
+              카운터 : {{ fnGetCounter }}
+            </button>`,
+            data : function () {
+                return { 
+                    nCounter: parseInt(this.startnumber)
+                }
+            },
+
+  
+  
+            computed: {
+                fnGetCounter: function () {
+                  return this.nCounter
+                }
+              },
+              // 5. 버튼이 눌리면 이벤트 핸들러로 카운터 값 +1 증가하는 메서드 속성 정의
+              methods: {
+                fnIncCounter: function () {
+                  this.nCounter += 1
+                }
+              }
+            })
+        
+    </script>
+    <script>
+       var main =  new Vue({
             el:'#main',
             data:{
                 nClicks:0
@@ -24,14 +61,16 @@
             computed:{
                 fnCounter(){
                     return 10-this.nClicks;
-                }
+                },
+               
                
             },
             /*뷰의 이벤트 핸들러 로직을 함수로 정의할떄*/
             methods:{
                 fnIncrement(){
                     this.nClicks++;
-                }
+                },
+               
             }
         })
 

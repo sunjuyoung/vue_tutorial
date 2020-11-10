@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+#wrap{
+   
+    display: flex;
+    flex-wrap: row wrap;
+    width: 90%;
+    margin:0 auto;
+}
+.header{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.header h1{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 12.5%;
+    height: 142px;
+    background: #ff9b57;
+}
+
+.header nav{
+    width:87.5%;
+    min-height: 80px;
+    background: #ff9b57;
+}
+
+.slider_section{
+    width: 50%;
+    background: blue;
+}

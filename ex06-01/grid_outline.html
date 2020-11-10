@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- vuetify.js에 필요한 스타일 파일 링크 연결 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+  <style>
+      .border_style{
+          /**/
+           /*초록색*/
+           border-color: rgb(7, 189, 7);
+           border-width:1px;
+           border-style: solid;
+
+           background-color: rgb(187, 245, 164);
+
+      }
+  </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 첫 화면의 시작은 v-app -->
+        <v-app>
+            <!-- 상단 부분은 v-app-bar엘리먼트 사용
+            dark 글자를 흰색으로 ,fixed 스크롤에 영향을 받지않고 고정 -->
+            <v-app-bar app color="primary" dark fixed>
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                <v-toolbar-title>header 입니다</v-toolbar-title>
+            </v-app-bar>
+            <!-- 콘텐츠 부분은 v-content -->
+            <v-content>
+                <v-container>
+                    <!-- 한 행은 12개 열이 기준 -->
+                    <v-row class="text-center">
+                        <v-col cols="12" class="border_style">xs12</v-col>
+                        <v-col cols="6" class="border_style">xs6</v-col>
+                        <v-col cols="3" class="border_style">xs3</v-col>
+                        <v-col cols="4" class="border_style">xs4</v-col>
+                        <!-- 초과하면 자동 줄 바꿈 -->
+                        
+                        <v-col cols="1" v-for="item in 12"
+                        v-bind:key="item.id" class="border_style">xs1</v-col>
+                    </v-row>    
+
+
+                </v-container>
+                <v-container fluid>
+                    <v-row class="text-center">
+                        <v-col sm="4" class="border_style">sm4</v-col>
+                        <!-- offset으로 그리드 사이에 4개의열 간격 띄움 -->
+                        <v-col sm="4" offset-sm="4" class="border_style">4</v-col>
+                    </v-row>
+                </v-container>
+            </v-content>
+            <v-footer color="secondary" dark fixed>
+                <div class="mx-auto">Copyright.&copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+      <!-- 필요한 Vue.js와 Vuetify.js의 자바스크립트 연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+  <script>
+      new Vue({
+          el:'#app',
+          vuetify:new Vuetify()
+      })
+  </script>
+</body>
+</html>
