@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- vuetify.js에 필요한 스타일 파일 링크 연결 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 첫 화면의 시작은 v-app -->
+        <v-app>
+            <!-- 상단 부분은 v-app-bar엘리먼트 사용
+            dark 글자를 흰색으로 ,fixed 스크롤에 영향을 받지않고 고정 -->
+            <v-app-bar app color="primary" dark >
+                <!-- 메뉴 아이콘을 누르면 클릭 기능 비활성화 -->
+                <v-app-bar-nav-icon @click.stop="dDrawer = !dDrawer"></v-app-bar-nav-icon>
+                <v-toolbar-title class="white-text mx-auto">Virtual Company</v-toolbar-title>
+            </v-app-bar>
+            <!-- dDrawer가 true이면 탐색 서랍을 사용하도록 바인딩 -->
+            <v-navigation-drawer absolute temporary v-model="dDrawer">
+                <!-- 툴바를 이용해 안쪽 메뉴 제목을 플랫 스타일로 작성 -->
+                <v-toolbar flat height="70px">
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-avatar>
+                                <img src="https://randomuser.me/api/portraits/men/44.jpg">
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title class="title">
+                                    홍길동
+                                </v-list-item-title>
+                                <v-list-item-subtitle>로그인</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-toolbar>
+                <v-divider></v-divider>
+
+                <v-list class="pt-3">
+                    <v-list-item v-for="item in aMenu_items"  :href="item.link">
+                        <v-list-item-action>
+                            <v-icon>{{item.icon}}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>{{item.title}}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-navigation-drawer>
+
+            <v-footer color="secondary" dark>
+            </v-footer>
+        </v-app>
+    </div>
+      <!-- 필요한 Vue.js와 Vuetify.js의 자바스크립트 연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+  <script>
+      new Vue({
+          el:'#app',
+          vuetify:new Vuetify(),
+            data:{
+                dDrawer : false,
+                aMenu_items:[
+                    {
+                        title:'스타벅스',
+                        icon:'fa-coffee',
+                        link:'http://www.starbucks.com'
+                    },
+                    {
+                        title:'애플',
+                        icon:'mdi-apple',
+                        link:'http://www.starbucks.com'
+                    },
+                    {
+                        title:'페이스북',
+                        icon:'mdi-facebook-box',
+                        link:'http://www.starbucks.com'
+                    }
+                ]
+            }
+      })
+  </script>
+</body>
+</html>
