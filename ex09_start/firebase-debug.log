@@ -1,0 +1,53 @@
+[debug] [2020-11-16T05:06:47.331Z] ----------------------------------------------------------------------
+[debug] [2020-11-16T05:06:47.332Z] Command:       D:\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-11-16T05:06:47.333Z] CLI Version:   8.16.2
+[debug] [2020-11-16T05:06:47.333Z] Platform:      win32
+[debug] [2020-11-16T05:06:47.333Z] Node Version:  v14.8.0
+[debug] [2020-11-16T05:06:47.334Z] Time:          Mon Nov 16 2020 14:06:47 GMT+0900 (대한민국 표준시)
+[debug] [2020-11-16T05:06:47.334Z] ----------------------------------------------------------------------
+[debug] [2020-11-16T05:06:47.334Z] 
+[debug] [2020-11-16T05:06:47.339Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-16T05:06:47.339Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\interactive_web\ex09_start
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-11-16T05:07:44.917Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-11-16T05:07:44.918Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-16T05:07:45.144Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Mon, 16 Nov 2020 05:07:43 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-16T05:07:45.163Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-11-16T05:07:45.974Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 16 Nov 2020 05:07:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  Using project pwa-to-do-bd0d1 (pwa-to-do) 
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2020-11-16T05:07:55.860Z] >>> HTTP REQUEST GET https://pwa-to-do-bd0d1.firebaseio.com/.settings/rules.json  
+ 
+[debug] [2020-11-16T05:07:56.481Z] <<< HTTP RESPONSE 200 {"server":"nginx","date":"Mon, 16 Nov 2020 05:07:54 GMT","content-type":"application/json; charset=utf-8","content-length":"123","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[debug] [2020-11-16T05:07:56.734Z] Error: EISDIR: illegal operation on a directory, open 'D:\interactive_web\ex09_start\dist'
+    at Object.openSync (fs.js:465:3)
+    at Object.writeFileSync (fs.js:1416:35)
+    at Config.writeProjectFile (C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:156:8)
+    at C:\Users\Administrator\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:25:23
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
